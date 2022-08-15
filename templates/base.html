@@ -35,24 +35,24 @@
                 </a>
                 <ul class="dropdown-menu">
                     {% for category in categories %}
-                    <li><a class="dropdown-item" href='{{ category.get_absolute_url }}'>{{ category.name }}</a></li>
+                        <li><a class="dropdown-item" href='{{ category.get_absolute_url }}'>{{ category.name }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
             {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'cart_detail' %}">Корзина</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'user_profile' %}">Профиль</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Выйти из аккаунта</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart_detail' %}">Корзина</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_profile' %}">Профиль</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Выйти из аккаунта</a>
+                </li>
             {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Войти</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Войти</a>
+                </li>
             {% endif %}
         </ul>
     </div>
